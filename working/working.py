@@ -12,8 +12,7 @@ def main():
 
 def convert(s):
     # re
-    time_result = re.search(r"(\d+)(?::(\d+))? (AM|PM) to (\d+)(?::(\d+))? (AM|PM)",s)
-
+    time_result = re.fullmatch(r"(\d{1,2})(?::(\d{2}))? (AM|PM) to (\d{1,2})(?::(\d{2}))? (AM|PM)", s)
     if time_result:
         # get groups into temp
         temp = list(time_result.groups())
